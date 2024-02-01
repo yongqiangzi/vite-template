@@ -1,3 +1,8 @@
+/*
+ * @Date: 2024-01-03 11:08:34
+ * @LastEditTime: 2024-01-03 20:00:47
+ * @FilePath: \vite.config.ts
+ */
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -18,7 +23,12 @@ export default ({ mode }: any) => {
       vue(),
       vueJsx(),
       Components({
-        resolvers: [AntDesignVueResolver()],
+        resolvers: [
+          AntDesignVueResolver({
+            importStyle: false,
+          }),
+        ],
+        dts: false,
       }),
       createHtmlPlugin({
         inject: {

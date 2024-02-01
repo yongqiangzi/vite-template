@@ -1,8 +1,17 @@
+/*
+ * @Date: 2024-01-03 11:08:34
+ * @LastEditTime: 2024-01-11 17:04:26
+ * @FilePath: \.eslintrc.cjs
+ */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
+  env: {
+    node: true,
+    'vue/setup-compiler-macros': true,
+  },
   extends: [
     'airbnb-base',
     'plugin:vue/vue3-essential',
@@ -37,6 +46,7 @@ module.exports = {
     'vue/no-reserved-component-names': 'warn',
     'no-unused-vars': 'warn',
     'prefer-const': ['error', { ignoreReadBeforeAssign: false, destructuring: 'all' }],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
   },
   settings: {
     'import/resolver': {
